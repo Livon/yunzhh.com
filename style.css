@@ -10,7 +10,7 @@ body {
 
 #app {
   height: 100%;
-  font-family: "微软雅黑", sans-serif; /* 将 Montserrat 字体替换为微软雅黑 */
+  font-family: "Montserrat", serif;
 }
 
 /* 修改链接的颜色 */
