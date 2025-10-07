@@ -39,7 +39,7 @@ body {
 
 .clock {
   --w: 47%;
-  --h: 3px;
+  --h: 8px;
   --dur: 0.4s;
   position: relative;
   width: var(--clock-size);
@@ -61,7 +61,7 @@ body {
   transform-origin: 0% 50%;
   width: var(--w);
   height: var(--h);
-  background: black;
+  background: #fc5185;
   border-radius: 9999px;
   transition: calc(var(--dur) * 1s) ease-in-out;
   transform: rotate(calc(var(--angle) * 1deg));
@@ -69,10 +69,14 @@ body {
 
 .clock::before {
   --angle: var(--hour-angle);
+  /* 时针样式 */
+  background: #fc5185;
 }
 
 .clock::after {
   --angle: var(--minute-angle);
+  /* 分针样式 */
+  background: #fc5185;
 }
 
 @media (max-width: 700px) {
