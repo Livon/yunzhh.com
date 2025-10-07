@@ -23,3 +23,8 @@ function randomColors (count) {
         .fill(0)
         .map(() => "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0'))
 }
+
+// 页面加载完成后隐藏加载界面
+window.addEventListener('load', function() {
+  document.body.classList.add('loaded');
+});
