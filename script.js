@@ -1,4 +1,4 @@
-import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js"
+import TubesCursor from "./tubes.mini.js"
 
 const app = TubesCursor(document.getElementById('canvas'), {
   tubes: {
