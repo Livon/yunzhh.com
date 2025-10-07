@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>视频仪表盘</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-in-out',
+                        'fade-in': 'fadeIn 1.2s ease-in-out',
+                        'pulse-slow': 'pulse 2s infinite'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        pulse: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(0,198,255,0.4)' },
+                            '70%': { boxShadow: '0 0 0 10px rgba(0,198,255,0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+                min-height: 100vh;
+                @apply flex flex-col text-white;
+            }
+        }
+        @layer components {
+            .glass {
+                background: rgba(255,255,255,0.08);
+                border-radius: 20px;
+                box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+                backdrop-filter: blur(6px);
+                border: 1px solid rgba(255,255,255,0.18);
+                @apply p-8 my-8 animate-fade-in-up;
+            }
+            .video-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+                @apply mb-8 animate-fade-in;
+            }
+            .video-container iframe, .video-container video {
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                border-radius: 16px;
+            }
+            .download-link {
+                display: inline-block;
+                margin: 1.5rem 0;
+                padding: 0.75rem 2rem;
+                font-size: 1.1rem;
+                border-radius: 30px;
+                background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+                color: #fff;
+                text-decoration: none;
+                box-shadow: 0 2px 8px rgba(0,198,255,0.2);
+                transition: background 0.3s, transform 0.2s;
+                @apply animate-pulse-slow;
+            }
+            .download-link:hover {
+                background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+                transform: scale(1.05);
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4">
+        <div class="glass text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 animate-fade-in-down">视频仪表盘</h1>
+            <h2 class="text-xl md:text-2xl mb-3 text-cyan-400 font-semibold animate-fade-in-down">多路视频监视管理中心</h2>
+            <p class="text-lg mb-6 animate-fade-in">支持 Win7，支持窗口缩放，绿色无须安装。下面是演示视频及下载链接。</p>
+            <div class="video-container mb-6">
+                <!-- 可替换为实际视频链接 -->
+                <video controls poster="yunzhh.com.jpg">
+                    <source src="2025-10-07.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+            <a href="http://151.download.yunzhh.com/video-dashboard/BigScreenYunzhh-20251007-x64.zip" class="download-link" download>
+                <span class="inline-block mr-2">&#8595;</span>
+                下载附件 ( 110MB )
+            </a>
+        </div>
+    </div>
+    <footer class="mt-auto py-4 text-center text-sm text-blue-200 tracking-wider bg-black bg-opacity-15 border-t border-white border-opacity-10">
+        &copy; 2025 <a href="https://yunzhh.com" class="text-cyan-300 hover:underline" target="_blank" rel="noopener">yunzhh.com</a>. 
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</body>
+</html>
