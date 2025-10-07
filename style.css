@@ -44,6 +44,7 @@ h1 {
   font-size: 80px;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 1.1rem; /* 增加字间距 */
 }
 
 h2 {
