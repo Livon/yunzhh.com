@@ -33,7 +33,7 @@ h1, h2, p {
   padding: 0;
   color: white;
   text-shadow: 0 0 20px rgba(0, 0, 0, 1);
-  line-height: 100%;
+  line-height: 160%;
   user-select: none;
 }
 
