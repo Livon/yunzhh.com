@@ -13,9 +13,11 @@ body {
   font-family: "Montserrat", serif;
 }
 
+/* 修改链接的颜色 */
 #app a {
   text-decoration: none;
-  color: #fff;
+  color: #e0e0e0; /* 与标题保持一致的银灰色 */
+  text-shadow: 0 0 10px rgba(100, 149, 237, 0.5); /* 添加轻微的蓝色背光效果 */
 }
 
 .hero {
@@ -28,11 +30,12 @@ body {
   gap: 10px;
 }
 
+/* 修改标题和段落的颜色与阴影效果 */
 h1, h2, p {
   margin: 0;
   padding: 0;
-  color: white;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  color: #e0e0e0; /* 将纯白色改为柔和的银灰色，更加高级 */
+  text-shadow: 0 0 10px rgba(100, 149, 237, 0.5); /* 添加轻微的蓝色背光效果 */
   line-height: 160%;
   user-select: none;
 }
