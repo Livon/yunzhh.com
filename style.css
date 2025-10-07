@@ -47,10 +47,10 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2px; /* 增加字间距 */
+  letter-spacing: 1.6rem; /* 增加字间距 */
 }
 
 #canvas {
